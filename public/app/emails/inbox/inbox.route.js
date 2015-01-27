@@ -1,4 +1,4 @@
-angular.module('MailClient.pageComponents.mailLists.inbox.route', [])
+angular.module('MailClient.app.emails.inbox.route', [])
 
     .config(function ($stateProvider) {
 
@@ -7,9 +7,10 @@ angular.module('MailClient.pageComponents.mailLists.inbox.route', [])
                 url: '/inbox',
                 views: {
                     'content@': {
-                        templateUrl: 'pageComponents/mailLists/inbox/inbox.html',
+                        templateUrl: 'app/emails/inbox/inbox.html',
                         controller: 'InboxCtrl as InboxCtrl'
                     }
                 }
+
             });
     });

@@ -1,4 +1,4 @@
-angular.module('MailClient.pageComponents.mailLists.sent.route', [])
+angular.module('MailClient.app.emails.sent.route', [])
 
     .config(function ($stateProvider) {
 
@@ -7,7 +7,7 @@ angular.module('MailClient.pageComponents.mailLists.sent.route', [])
                 url: '/sent',
                 views: {
                     'content@': {
-                        templateUrl: 'pageComponents/mailLists/sent/sent.html',
+                        templateUrl: 'app/emails/sent/sent.html',
                         controller: 'SentCtrl as SentCtrl'
                     }
                 }

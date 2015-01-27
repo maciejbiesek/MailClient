@@ -1,4 +1,4 @@
-angular.module('MailClient.pageComponents.newMail.create.route', [])
+angular.module('MailClient.app.newMail.create.route', [])
 
     .config(function ($stateProvider) {
 
@@ -7,7 +7,7 @@ angular.module('MailClient.pageComponents.newMail.create.route', [])
                 url: '/create',
                 views: {
                     'content@': {
-                        templateUrl: 'pageComponents/newMail/create.html',
+                        templateUrl: 'app/newMail/create.html',
                         controller: 'CreateCtrl as CreateCtrl'
                     }
                 }

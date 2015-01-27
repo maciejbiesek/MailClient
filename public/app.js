@@ -3,15 +3,18 @@ angular.module("MailClient", [
 
     'MailClient.route',
 
-    'MailClient.pageComponents.common.viewComponents.panel.panelCtrl',
+    'MailClient.app.common.viewComponents.panel.panelCtrl',
+    'MailClient.app.common.http',
 
-    'MailClient.pageComponents.newMail.create.route',
-    'MailClient.pageComponents.newMail.CreateCtrl',
+    'MailClient.app.newMail.create.route',
+    'MailClient.app.newMail.CreateCtrl',
 
-    'MailClient.pageComponents.mailLists.sent.route',
-    'MailClient.pageComponents.mailLists.sent.SentCtrl',
+    'MailClient.app.emails.content',
 
-    'MailClient.pageComponents.mailLists.inbox.route',
-    'MailClient.pageComponents.mailLists.inbox.InboxCtrl'
+    'MailClient.app.emails.sent.route',
+    'MailClient.app.emails.sent.SentCtrl',
+
+    'MailClient.app.emails.inbox.route',
+    'MailClient.app.emails.inbox.InboxCtrl'
 
 ]);
