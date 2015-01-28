@@ -4,12 +4,9 @@ angular.module("MailClient", [
     'MailClient.route',
 
     'MailClient.app.common.viewComponents.panel.panelCtrl',
-    'MailClient.app.common.http',
 
     'MailClient.app.newMail.create.route',
     'MailClient.app.newMail.CreateCtrl',
-
-    'MailClient.app.emails.content',
 
     'MailClient.app.emails.sent.route',
     'MailClient.app.emails.sent.SentCtrl',

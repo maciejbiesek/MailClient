@@ -1,10 +1,13 @@
 angular.module('MailClient.app.emails.inbox.InboxCtrl', [])
 
-    .controller('InboxCtrl', ['$scope', 'httpService', 'contentService',
-        function ($scope, httpService, contentService) {
+    .controller('InboxCtrl', ['$scope', '$http',
+        function ($scope, $http) {
 
-            this.contentService = contentService;
-            httpService.loadData('/emails', this, this.contentService.loadList, 'inbox');
+            $scope.getEmails = function () {
+                $http.get('/emails').success(function (res) {
+                    $scope.inbox = res;
+                });
+            };
+            $scope.getEmails();
 
-            $scope.in = contentService.inbox;
         }]);
