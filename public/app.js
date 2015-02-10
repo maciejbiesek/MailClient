@@ -12,6 +12,8 @@ angular.module("MailClient", [
     'MailClient.app.emails.sent.SentCtrl',
 
     'MailClient.app.emails.inbox.route',
-    'MailClient.app.emails.inbox.InboxCtrl'
+    'MailClient.app.emails.inbox.InboxCtrl',
+	
+	'MailClient.app.emails.listDirective'
 
 ]);
