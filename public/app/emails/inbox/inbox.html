@@ -1,2 +1,17 @@
 inbox
-{{inbox[0].title}}
+<input ng-change="onSearch()" ng-model="searchTerm" placeholder="szukaj"/>
+<ul>
+	<style scoped>
+		strong{
+			font-weight:bold;
+			color:#669fb1;
+		}
+
+		.hidden{
+			display: none;
+		}
+	</style>
+	{{searchTerm}}
+	<li ng-repeat="mail in inbox" ng-class="{hidden: !mail.display}" ng-bind-html="mail.title | highlight : searchTerm">
+	</li>
+</ul>
