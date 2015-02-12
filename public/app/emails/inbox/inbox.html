@@ -1,2 +1,14 @@
+inbox
+<input ng-change="onSearch()" ng-model="searchTerm" placeholder="szukaj"/>
+	<style scoped>
+		strong{
+			font-weight:bold;
+			color:#669fb1;
+		}
 
-<list-directive emails = "inbox"></list-directive>
+		.hidden{
+			display: none;
+		}
+	</style>
+	{{searchTerm}}
+<list-directive emails="inbox" search-term="searchTerm"></list-directive>
