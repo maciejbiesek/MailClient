@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="semantic/dist/semantic.css">
+    <link rel="stylesheet" href="custom-style.css">
+    <link rel="stylesheet" href="animate.css">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="semantic/dist/semantic.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+<div class="ui left vertical inverted labeled icon sidebar menu">
+    <a class="item">
+        <i class="list layout icon"></i>
+        Email List
+    </a>
+    <a class="item">
+        <i class="mail outline icon"></i>
+        Mail View
+    </a>
+    <a class="item">
+        <i class="send icon"></i>
+        New Mail
+    </a>
+    <a class="item">
+        <i class="settings icon"></i>
+        Settings
+    </a>
+</div>
+<div class="pusher">
+    <div class="ui blue big launch right attached fixed button" id="launchMenuBtn">
+        <i class="content icon"></i>
+        <span class="text" id="launchMenuText">Menu</span>
+    </div>
+    <!--<div class="ui fixed inverted main menu">-->
+    <!--<div class="container">-->
+    <!--<a class="launch item">-->
+    <!--<i class="lemon icon"></i>-->
+    <!--LemonMail-->
+    <!--</a>-->
+
+    <!--<div class="title item">-->
+    <!--<b>Page Name:</b> Menu-->
+    <!--</div>-->
+
+    <!--<a class="icon item" href="/collections/grid.html"><i class="left chevron icon"></i></a>-->
+
+    <!--<div class="section link item">-->
+    <!--<span class="count">4 of 10</span>-->
+    <!--</div>-->
+    <!--<a class="icon item" href="/collections/message.html"><i class="right chevron icon"></i></a>-->
+    <!--s-->
+    <!--<div class="right menu">-->
+    <!--<div class="vertically fitted borderless item">-->
+
+    <!--<iframe class="github"-->
+    <!--src="http://ghbtns.com/github-btn.html?user=Delfinek&amp;repo=projekt_mail_client&amp;type=watch&amp;count=true"-->
+    <!--allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>-->
+    <!--</div>-->
+    <!--<a class="popup icon github item" data-content="View project on GitHub"-->
+    <!--href="https://github.com/Delfinek/projekt_mail_client">-->
+    <!--<i class="alternate github icon"></i>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div style="height:1000px;padding-top:100px;">
+        <div class="ui grid">
+            <div class="ui grid">
+                <div class="two wide column hide-sm"></div>
+                <div class="twelve wide column sm-expand">
+                    <div class="ui segment">
+
+                        <div class="send-inbox-sent-menu">
+                            <a class="ui blue image label">
+                                <i class="send icon"></i>
+                            </a>
+                            <a class="ui blue image label">
+                                Inbox
+                                <span class="detail">10(2)</span>
+                            </a>
+                            <a class="ui blue image label">
+                                Sent
+                                <span class="detail">123(1)</span>
+                            </a>
+                        </div>
+                        <div class="search-box">
+                            <div class="ui action small left icon input">
+                                <i class="search icon"></i>
+                                <input type="text" placeholder="Search...">
+
+                                <div class="ui blue button">Search</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui segment">
+                        <br/>
+                        <!--długość treści maila max cała = 135 więc długośc contentu 135-długosć tytułu-->
+                        <!--max długość nadawcy-> 29 znaków-->
+                        <div class="ui secondary segment mail-item">
+                            <i class="mail-ico folder icon"></i>
+                            <!--<i class="mail-ico folder open outline icon"></i>-->
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content ?</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content ?...or a short content ?</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+                                sender</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+                                sender</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+                                sender</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+                                sender</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+                                sender</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+                                sender</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+                                sender</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+                                sender</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+                                sender</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+                                sender</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+                                sender</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+                        <div class="ui secondary segment mail-item">
+                            <!--<i class="mail-ico folder icon"></i>-->
+                            <i class="mail-ico folder open outline icon"></i>
+                            <a class="mail-sender">the title of the mail sender</a>
+                            <a class="mail-vertical-separator"></a>
+                            <a class="mail-title">title of the mail</a>
+                            <a> - </a>
+                            <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+                                sender</a>
+                            <i class="trash icon float-right"></i>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="two wide column hide-sm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    function funcIn() {
+        launchMenuText.setAttribute("style", "display:initial;")
+    }
+
+    function funcOut() {
+        launchMenuText.setAttribute("style", "display:none;")
+    }
+
+
+    document.getElementById("launchMenuBtn").addEventListener("click", function () {
+        $('.sidebar.menu')
+                .sidebar('toggle')
+    });
+
+    $(document).ready(function () {
+        funcOut();
+        var launchMenuBtn = document.getElementById("launchMenuBtn");
+        var launchMenuText = document.getElementById("launchMenuText");
+
+        launchMenuBtn.addEventListener("mouseover", funcIn, false);
+        launchMenuBtn.addEventListener("mouseout", funcOut, false);
+    });
+
+
+</script>
+
+</html>

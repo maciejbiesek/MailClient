@@ -1,14 +1,43 @@
 inbox
 <input ng-change="onSearch()" ng-model="searchTerm" placeholder="szukaj"/>
 	<style scoped>
-		strong{
-			font-weight:bold;
-			color:#669fb1;
-		}
 
-		.hidden{
-			display: none;
-		}
 	</style>
 	{{searchTerm}}
-<list-directive emails="inbox" search-term="searchTerm"></list-directive>
+
+
+<div style="height:1000px;padding-top:100px;">
+        <div class="ui grid">
+            <div class="ui grid">
+                <div class="two wide column hide-sm"></div>
+                <div class="twelve wide column sm-expand">
+                    <div class="ui segment">
+
+                        <div class="send-inbox-sent-menu">
+                            <a class="ui blue image label">
+                                <i class="send icon"></i>
+                            </a>
+                            <a class="ui blue image label">
+                                Inbox
+                                <span class="detail">10(2)</span>
+                            </a>
+                            <a class="ui blue image label">
+                                Sent
+                                <span class="detail">123(1)</span>
+                            </a>
+                        </div>
+                        <div class="search-box">
+                            <div class="ui action small left icon input">
+                                <i class="search icon"></i>
+                                <input type="text" placeholder="Search..." ng-change="onSearch()" ng-model="searchTerm"/>
+
+                                <div class="ui blue button">Search</div>
+                            </div>
+                        </div>
+                    </div>
+					<list-directive emails="inbox" search-term="searchTerm"></list-directive>
+                </div>
+                <div class="two wide column hide-sm"></div>
+            </div>
+        </div>
+    </div>
