@@ -1,1 +1,23 @@
-create
+<form name="addresses" ng-controller="CreateCtrl">
+
+	<label for="receiver">Receiver</label>
+	<input type="email" ng-class="{error: !receiver && receivers.length==0}" name="receiver" ng-model="receiver" ng-model-options="{ debounce: 700 }"/>
+	<span ng-show="!receiver && receivers.length==0">(required)</span>
+	<span ng-show="addresses.receiver.$error.email">
+      Not valid email</span><br>
+    <button ng-click="addReceiver(receiver);">Add new</button>
+    <br>{{receivers}}<br>
+</form>
+
+<form name="newMail" ng-controller="CreateCtrl">
+	<label for="title">Title</label>
+	<input ng-class="{error: newMail.title.$error.required}" name="title" ng-model="title" required>
+ 	<span ng-show="newMail.title.$error.required">(required)</span><br>
+
+ 	<label for="content">Content</label>
+ 	<input ng-class="{error: newMail.content.$error.required}" name="content" ng-model="content" required>
+ 	<span ng-show="newMail.content.$error.required">(required)</span><br>
+
+ 	<button ng-click="send()">Send</button>
+
+ </form>
