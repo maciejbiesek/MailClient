@@ -16,5 +16,14 @@
       "sosnowski@outlook.com"
     ],
     "sent": 1421610528931
+  },
+  {
+    "id": "1424210238048",
+    "title": "Mój tytuł",
+    "content": "something",
+    "receivers": [
+      "anna@fontanna.com"
+    ],
+    "sent": 1424210238048
   }
 ]

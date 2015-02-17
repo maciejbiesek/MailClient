@@ -6,7 +6,9 @@ angular.module('MailClient.app.emails.inbox.InboxCtrl', [])
 			$scope.getEmails = function () {
 				$http.get('/emails').success(function (res) {
 					$scope.inbox = res;
-					$scope.inbox.forEach(function(elem){elem.display=true})
+					$scope.inbox.forEach(function(elem){
+						elem.display=true;
+					});
 				});
 			};
 			$scope.getEmails();
@@ -14,12 +16,11 @@ angular.module('MailClient.app.emails.inbox.InboxCtrl', [])
 				var counter = 0;
 				if($scope.inbox !== undefined){
 					$scope.inbox.forEach(function(message){
-						if(message.read == false){
+						if(message.read === false){
 							counter++;
 						}
-					})
+					});
 					return counter;
 				}
-			}
-		}]
-	);
+			};
+		}]);

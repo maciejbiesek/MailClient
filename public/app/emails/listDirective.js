@@ -22,7 +22,7 @@ angular.module('MailClient.app.emails.listDirective', [])
 					var reg = new RegExp("(" + searchTerm + ")","gim");
 					if (newValue[0] !== undefined) {
 						newValue[0].forEach(function(message) {
-							display = searchTerm==null;
+							display = searchTerm === null;
 							messageToDisplay = {};
 							var li = document.createElement("div");
 							li.classList.add("ui", "secondary", "segment", "mail-item");
@@ -37,14 +37,19 @@ angular.module('MailClient.app.emails.listDirective', [])
 							if (!display){
 								li.classList.add("hidden");
 							}
-
+							var corespondent;
+							if(message.sender !== undefined){
+								corespondent = message.sender;
+							}else if (message.receivers !== undefined){
+								corespondent = message.receivers[0];
+							}
 							var message_html = '<a href="www.google.com"><div class="email-preview">';
 							if (message.read === false){
 								message_html += '<i class="mail-ico folder icon"></i>';
 							}else{
 								message_html += '<i class="mail-ico folder open outline icon"></i>';
 							}
-							message_html += '<a class="mail-sender">' + messageToDisplay.sender + '</a>' +
+							message_html += '<a class="mail-sender">' + corespondent  + '</a>' +
                             '<a class="mail-vertical-separator"></a>' +
                             '<a href="#/view/' + message.id + '" class="mail-title">' + messageToDisplay.title + '</a>' +
                             '<a> - </a>' +

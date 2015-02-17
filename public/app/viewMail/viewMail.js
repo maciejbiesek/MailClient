@@ -10,6 +10,13 @@ angular.module('MailClient.app.viewMail.viewMailCtrl', [])
                 }).error(function (res) {
                     $scope.mail = 'ERROR: ' + res;
                 });
+/*
+                $http.get('/sent/' + id).success(function (res) {
+                    $scope.mail.concat(res);
+                }).error(function (res) {
+                    $scope.mail = 'ERROR: ' + res;
+                });
+*/
             };
             $scope.getMail();
 
