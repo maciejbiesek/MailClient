@@ -1,3 +1,4 @@
+/*
 angular.module('MailClient.app.emails.inbox.InboxCtrl', [])
 	.controller('ViewMailCtrl', ['$scope', '$http',
         function ($scope, $http) {
@@ -11,3 +12,4 @@ angular.module('MailClient.app.emails.inbox.InboxCtrl', [])
             $scope.getMail();
 
     }]);
+  */

@@ -19,8 +19,5 @@ angular.module('MailClient.app.emails.inbox.InboxCtrl', [])
 				})
 				return counter;
 			}
-		
-
-
-	}]
-);
+		}]
+	);
