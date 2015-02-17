@@ -16,11 +16,11 @@ angular.module('MailClient.app.emails.listDirective', [])
 					list.classList.add("ui", "segment");
 					console.log(newValue);
 					var searchTerm = newValue[1];
-					var searchBy = ["title", "content", "sender"];
+					var searchBy = ["title", "content"];
 					var display;
 					var messageToDisplay;
 					var reg = new RegExp("(" + searchTerm + ")","gim");
-					if (newValue !== undefined) {
+					if (newValue[0] !== undefined) {
 						newValue[0].forEach(function(message) {
 							display = searchTerm==null;
 							messageToDisplay = {};
@@ -28,7 +28,7 @@ angular.module('MailClient.app.emails.listDirective', [])
 							li.classList.add("ui", "secondary", "segment", "mail-item");
 							for (var j in searchBy){
 								var matches = reg.test(message[searchBy[j]]);
-								console.log(matches)
+
 								if (matches){
 									display = true;
 								}
@@ -38,7 +38,7 @@ angular.module('MailClient.app.emails.listDirective', [])
 								li.classList.add("hidden");
 							}
 
-							var message_html = '<div class="email-preview">';
+							var message_html = '<a href="www.google.com"><div class="email-preview">';
 							if (message.read === false){
 								message_html += '<i class="mail-ico folder icon"></i>';
 							}else{
@@ -46,10 +46,10 @@ angular.module('MailClient.app.emails.listDirective', [])
 							}
 							message_html += '<a class="mail-sender">' + messageToDisplay.sender + '</a>' +
                             '<a class="mail-vertical-separator"></a>' +
-                            '<a class="mail-title">' + messageToDisplay.title + '</a>' +
+                            '<a href="#/view/' + message.id + '" class="mail-title">' + messageToDisplay.title + '</a>' +
                             '<a> - </a>' +
                             '<a>' + messageToDisplay.content + '</a>' +
-                            '<i class="trash icon float-right"></i></div>';
+                            '<i class="trash icon float-right"></i></div></a>';
                         	li.innerHTML = message_html;
 
 							list.appendChild(li);

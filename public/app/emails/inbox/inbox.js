@@ -12,12 +12,14 @@ angular.module('MailClient.app.emails.inbox.InboxCtrl', [])
 			$scope.getEmails();
 			$scope.countUnread = function () {
 				var counter = 0;
-				$scope.inbox.forEach(function(message){
-					if(message.read == false){
-						counter++;
-					}
-				})
-				return counter;
+				if($scope.inbox !== undefined){
+					$scope.inbox.forEach(function(message){
+						if(message.read == false){
+							counter++;
+						}
+					})
+					return counter;
+				}
 			}
 		}]
 	);
