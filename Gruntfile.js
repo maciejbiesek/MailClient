@@ -13,7 +13,8 @@ module.exports = function(grunt) {
             },
             files: [
               '<%= paths.public %>/**/{,*/}*.js',
-              '!<%= paths.public %>/libraries/*'
+              '!<%= paths.public %>/libraries/*',
+              '!<%= paths.public %>/components/*'
             ]
         },
 
@@ -36,14 +37,16 @@ module.exports = function(grunt) {
                     src: [
                         '<%= paths.public %>/**/{,*/}*.js',
                         '!<%= paths.public %>/main.js',
-                        '!<%= paths.public %>/libraries/*'
+                        '!<%= paths.public %>/libraries/*',
+                        '!<%= paths.public %>/components/*'
                     ],
                     dest: '<%= paths.public %>/main.js'
                 },
                 css: {
                     src: [
                         '<%= paths.public %>/**/{,*/}*.css',
-                        '!<%= paths.public %>/main.css'
+                        '!<%= paths.public %>/main.css',
+                        '!<%= paths.public %>/components/*'
                     ],
                     dest: '<%= paths.public %>/main.css'
                 }
@@ -73,7 +76,8 @@ module.exports = function(grunt) {
                 files: [
                     '<%= paths.public %>/**/{,*/}*.js',
                     '!<%= paths.public %>/main.js',
-                    '!<%= paths.public %>/libraries/*'
+                    '!<%= paths.public %>/libraries/*',
+                    '!<%= paths.public %>/components/*'
                 ],
                 tasks: [
                     'jshint',
@@ -84,7 +88,8 @@ module.exports = function(grunt) {
             css: {
                 files: [
                     '<%= paths.public %>/**/{,*/}*.css',
-                    '!<%= paths.public %>/main.css'
+                    '!<%= paths.public %>/main.css',
+                    '!<%= paths.public %>/components/*'
                 ],
                 tasks: [
                     'concat:css'
