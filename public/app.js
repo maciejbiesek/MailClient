@@ -13,6 +13,9 @@ angular.module("MailClient", [
 
     'MailClient.app.emails.inbox.route',
     'MailClient.app.emails.inbox.InboxCtrl',
+
+    'MailClient.app.viewMail.route',
+    'MailClient.app.viewMail.viewMailCtrl', 
 	
 	'MailClient.app.emails.listDirective'
 

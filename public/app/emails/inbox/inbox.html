@@ -1,36 +1,22 @@
-<div style="height:1000px;padding-top:100px;">
+<div style="height:1000px;">
+    <div class="ui grid">
         <div class="ui grid">
-            <div class="ui grid">
-                <div class="two wide column hide-sm"></div>
-                <div class="twelve wide column sm-expand">
-                    <div class="ui segment">
-
-                        <div class="send-inbox-sent-menu">
-                            <a class="ui blue image label">
-                                <i class="send icon"></i>
-                            </a>
-                            <a class="ui blue image label">
-                                Inbox
-                                <span class="detail">{{inbox.length}}({{countUnread()}})</span>
-                            </a>
-                            <a class="ui blue image label">
-                                Sent
-                            </a>
-                        </div>
-                        <div class="search-box">
-                            <div class="ui action small left icon input">
-                                <i class="search icon"></i>
-                                <input type="text" placeholder="Search..." ng-change="onSearch()" ng-model="searchTerm"/>
-
-                                <div class="ui blue button">Search</div>
-                            </div>
+            <div class="two wide column hide-sm"></div>
+            <div class="twelve wide column sm-expand">
+                <div class="ui segment">
+                    <div class="search-box">
+                        <div class="ui action small left icon input">
+                            <i class="search icon"></i>
+                            <input type="text" placeholder="Search..." ng-change="onSearch()" ng-model="searchTerm"/>
+                            <div class="ui blue button">Search</div>
                         </div>
                     </div>
-					<list-directive emails="inbox" search-term="searchTerm"></list-directive>
                 </div>
-                <div class="two wide column hide-sm"></div>
+				<list-directive emails="inbox" search-term="searchTerm"></list-directive>
             </div>
+            <div class="two wide column hide-sm"></div>
         </div>
     </div>
+</div>
 
 

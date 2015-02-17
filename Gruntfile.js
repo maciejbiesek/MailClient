@@ -61,7 +61,7 @@ module.exports = function(grunt) {
             livereload: {
                 options: {
                     open: {
-                        target: 'http://localhost:3000',
+                        target: 'http://localhost:3000/#/inbox',
                         appName: 'google-chrome'
                     },
                     base: [
