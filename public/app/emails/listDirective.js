@@ -22,7 +22,7 @@ angular.module('MailClient.app.emails.listDirective', [])
 					var reg = new RegExp("(" + searchTerm + ")","gim");
 					if (newValue[0] !== undefined) {
 						newValue[0].forEach(function(message) {
-							display = searchTerm === null;
+							display = searchTerm === undefined;
 							messageToDisplay = {};
 							var li = document.createElement("div");
 							li.classList.add("ui", "secondary", "segment", "mail-item");
