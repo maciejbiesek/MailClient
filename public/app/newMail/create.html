@@ -1,1 +1,56 @@
-create
+<div class="pusher">
+    <div class="ui grid">
+        <div class="ui grid">
+            <div class="two wide column hide-sm"></div>
+            <div class="twelve wide column sm-expand">
+                <div class="ui segment">
+
+                    <form name="newMail" ng-controller="CreateCtrl">
+                        <div class="inline-block">
+                            <div class="ui labeled input">
+                                <div class="ui label blue">
+                                    To:
+                                </div>
+                                <input placeholder="E-mail address" type="email" ng-class="{error: !receiver && receivers.length==0}" name="receiver" ng-model="receiver" ng-model-options="{ debounce: 700 }" required/>
+                                <a class="ui blue image label" ng-click="addReceiver(receiver)">
+                                	Add new
+                                </a>
+                            </div>                      
+                        </div>
+                        <div class="ui image label email" ng-repeat="address in receivers">
+                            {{address}}
+                            <!--<i class="delete icon"></i>-->
+                        </div>
+                        <div ng-if="!receiver && receivers.length==0">(required!)</div>
+
+                        <div class="ui divider">
+                        </div>
+                    
+                        <div class="width100">
+                            <div class="inline-block width100">
+                                <div class="ui labeled input width100">
+                                    <div class="ui label width10 blue">
+                                        Title:
+                                    </div>
+                                    <input type="text" placeholder="Your Title" ng-class="{error: newMail.title.$error.required}" name="title" ng-model="title" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="width100">
+                            <div class="field">
+                                <label>Email:</label>
+                                <textarea class="width100 height300" ng-class="{error: newMail.content.$error.required}" name="content" ng-model="content" required></textarea>
+                            </div>
+                        </div>
+                        <div class="ui divider"></div>
+                    <button ng-click="send()" class="ui download primary button float-right">
+                        Send
+                    </button>
+                    </form>
+
+                </div>
+                <div class="two wide column hide-sm"></div>
+            </div>
+        </div>
+</div>
