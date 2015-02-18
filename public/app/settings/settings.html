@@ -10,6 +10,7 @@
                             <div class="title">Choose</div>
                             <div class="description">a colour</div>
                         </div>
+
                     </div>
                     <a ng-repeat="chosenColor in colorsService.labels" class="step" ng-class="{active: colorsService.colors[chosenColor.name]}" ng-click="colorsService.changeColor(chosenColor.name)">
                         <div class="content">
@@ -29,24 +30,17 @@
                             <div class="title">Choose</div>
                             <div class="description">a refresh-rate</div>
                         </div>
-
                     </a>
                     <a ng-repeat="chosenTime in reloadingTimeService.labels" class="step" ng-class="{active: reloadingTimeService.values[chosenTime.time]}" ng-click="reloadingTimeService.setTime(chosenTime.time)">
                         <div class="content">
                             <div class="title">#{{chosenTime.id}}</div>
                             <div class="description">
                                 <span>{{chosenTime.time}}</span>
-                            </div>
                         </div>
                     </a>
-
                 </div>
             </div>
         </div>
         <div class="two wide column hide-sm"></div>
     </div>
 </div>
-
-                            <button ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label">
-                                COLORS
-                            </button>
