@@ -16,6 +16,9 @@ angular.module("MailClient", [
 
     'MailClient.app.viewMail.route',
     'MailClient.app.viewMail.viewMailCtrl', 
+
+    'MailClient.app.settings.SettingsCtrl',
+    'MailClient.app.settings.route',
 	
 	'MailClient.app.emails.listDirective'
 
