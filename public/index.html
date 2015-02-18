@@ -8,16 +8,81 @@
     <script src="libraries/angular.js"></script>
     <script src="libraries/angular-ui-router.js"></script>
 
-    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="semantic/dist/semantic.css">
+    <link rel="stylesheet" href="custom-style.css">
+    <link rel="stylesheet" href="animate.css">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="semantic/dist/semantic.js" type="text/javascript"></script>
+    <!--<link rel="stylesheet" href="main.css"/>-->
 
     <!-- minified .js file -->
     <script src="main.js"></script>
 
 </head>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <body ng-app="MailClient">
 
+
+
+
+
+
+<div class="pusher">
+    <div class="ui blue big launch right attached fixed button" id="launchMenuBtn">
+        <i class="content icon"></i>
+        <span class="text" id="launchMenuText">Menu</span>
+    </div>
+    <div style="height:1000px;padding-top:100px;">
+        <div class="ui grid">
+            <div class="ui grid">
+                <div class="two wide column hide-sm"></div>
+                <div class="twelve wide column sm-expand">
+                    <div class="ui segment">
+
+
+                    <div class="ui segment">
+                        <br/>
+
+                        <div ui-view="content"></div>
+
+                    </div>
+
+
+                </div>
+                <div class="two wide column hide-sm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 <div ui-view="panel"></div>
-<div ui-view="content"></div>
 
 </body>

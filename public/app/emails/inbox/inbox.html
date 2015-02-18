@@ -1,14 +1,45 @@
-inbox
-<input ng-change="onSearch()" ng-model="searchTerm" placeholder="szukaj"/>
-	<style scoped>
-		strong{
-			font-weight:bold;
-			color:#669fb1;
-		}
+<div class="send-inbox-sent-menu">
+    <a class="ui blue image label">
+        <i class="send icon"></i>
+    </a>
+    <a class="ui blue image label">
+        Inbox
+        <span class="detail">10(2)</span>
+    </a>
+    <a class="ui blue image label">
+        Sent
+        <span class="detail">123(1)</span>
+    </a>
+</div>
+<div class="search-box">
+    <div class="ui action small left icon input">
+        <i class="search icon"></i>
+        <input ng-change="onSearch()" ng-model="searchTerm" placeholder="szukaj"/>
+        <style scoped>
+            strong {
+                font-weight: bold;
+                color: #669fb1;
+            }
 
-		.hidden{
-			display: none;
-		}
-	</style>
-	{{searchTerm}}
-<list-directive emails="inbox" search-term="searchTerm"></list-directive>
+            .hidden {
+                display: none;
+            }
+        </style>
+        <div class="ui blue button">Search</div>
+    </div>
+</div>
+
+
+
+<div class="ui secondary segment mail-item">
+    <!--<i class="mail-ico folder icon"></i>-->
+    <i class="mail-ico folder open outline icon"></i>
+    <a class="mail-sender">the title of the mail sender</a>
+    <a class="mail-vertical-separator"></a>
+    <a class="mail-title">title of the mail</a>
+    <a> - </a>
+    <a>content of the mail , it's a long ...or a short content of the mail sender of the mail
+        sender</a>
+    <i class="trash icon float-right"></i>
+</div>
+

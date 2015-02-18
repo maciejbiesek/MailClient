@@ -1,0 +1,63 @@
+.fixed {
+    position: fixed;
+    top: 60px;
+    z-index: 9999;
+}
+
+.ui.grid {
+    margin: 0px;
+}
+
+.ui.black.big.launch span.text {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .two.wide.column.hide-sm {
+        display: none;
+    }
+
+    .twelve.wide.column.sm-expand {
+        width: 100% !important;
+    }
+}
+
+.send-inbox-sent-menu {
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    margin-bottom: 12px;
+}
+
+.send-inbox-sent-menu .send.icon {
+    margin-left: 10px;
+}
+
+.search-box {
+    display: inline-block;
+    float: right;
+}
+
+.mail-sender {
+    display: inline-block;
+    width: 200px;
+}
+
+.mail-vertical-separator {
+    display: inline-block;
+    width: 10px;
+}
+
+.mail-title {
+    font-weight: bold;
+}
+
+.segment.mail-item {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.mail-ico{
+    margin-right: 6px !important;
+}
