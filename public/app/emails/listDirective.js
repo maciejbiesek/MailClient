@@ -52,47 +52,18 @@ angular.module('MailClient.app.emails.listDirective', [])
                             }
 
 
-                            function getContentLenght (content, title) {
-                                (content.length+title.length < 135) ? result = content : result = content.substring(0, 131 - title.length);
-                                return result;
-                            };
-
-                            function getTitleLenght(title) {
-                                (title.length > 45) ? result = title.substring(0, 42) + "..." : result = title;
-                                return result;
-                            };
-
-                            function getCorespondentLenght(corespondent) {
-                                (corespondent.length > 29) ? result = corespondent.substring(0, 26) + "..." : result = corespondent;
-                                return result;
-                            };
-
-                            function adjustMail(corespondent, title, content) {
+                            console.log(messageToDisplay.title);
+                            console.log(corespondent);
+                            console.log(messageToDisplay.content);
 
 
-
-                                result = {};
-                                result.corespondent = getCorespondentLenght(corespondent);
-                                console.log(result.corespontent);
-                                result.title = getTitleLenght(title);
-                                result.content = getContentLenght(content, result.title);
-
-                                return result;
-                            }
-
-
-
-
-                            result = adjustMail(corespondent, messageToDisplay.title, messageToDisplay.content);
-
-
-
+                            result = scope.adjustMail(corespondent, messageToDisplay.title, messageToDisplay.content);
 
                             message_html += '<a class="mail-sender">' + result.corespondent + '</a>' +
                             '<a class="mail-vertical-separator"></a>' +
                             '<a href="#/view/' + message.id + '" class="mail-title">' + result.title + '</a>' +
                             '<a> - </a>' +
-                            '<a>' + result.content + '</a>' +
+                            '<a class="mail_content">' + result.content + '</a>' +
                             '<i class="trash icon float-right"></i></div></a>';
                             li.innerHTML = message_html;
 
@@ -101,6 +72,32 @@ angular.module('MailClient.app.emails.listDirective', [])
                         });
                     }
                 });
+
+                scope.getContentLength = function (content, title) {
+                    (content.length + title.length < 150) ? result = content : result = content.substring(0, 150 - title.length);
+                    return result;
+                };
+
+                scope.getTitleLength = function (title) {
+                    (title.length > 26) ? result = title.substring(0, 26) + "..." : result = title;
+                    return result;
+                };
+
+                scope.getCorespondentLength = function (corespondent) {
+                    (corespondent.length > 26) ? result = corespondent.substring(0, 26) + "..." : result = corespondent;
+                    return result;
+                };
+
+                scope.adjustMail = function (corespondent, title, content) {
+                    var result = {};
+                    result.corespondent = scope.getCorespondentLength(corespondent);
+                    result.title = scope.getTitleLength(title);
+                    result.content = scope.getContentLength(content, result.title);
+
+                    return result;
+                }
+
+
             }
         };
 
