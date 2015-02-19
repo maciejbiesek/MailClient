@@ -51,10 +51,10 @@ angular.module('MailClient.app.emails.listDirective', [])
                                 message_html += '<i class="mail-ico folder open outline icon"></i>';
                             }
 
-
-                            console.log(messageToDisplay.title);
-                            console.log(corespondent);
-                            console.log(messageToDisplay.content);
+							console.log(message);
+                            //console.log(messageToDisplay.title);
+                            //console.log(corespondent);
+                            //console.log(messageToDisplay.content);
 
 
                             result = scope.adjustMail(corespondent, messageToDisplay.title, messageToDisplay.content);
