@@ -2,10 +2,11 @@
     <div class="send-inbox-sent-menu">
         <a class="ui blue image label" href="/#/create">
             <i class="send icon"></i>
+            <span class="detail">(active)</span>
         </a>
         <a class="ui blue image label" href="/#/inbox">
             Inbox
-            <span class="detail">(active)</span>
+
         </a>
         <a class="ui blue image label" href="/#/sent">
             Sent
@@ -15,49 +16,6 @@
 </div>
 
 <div class="ui segment">
-    <div class="inline-block">
-        <div class="ui labeled input">
-            <a class="ui label blue">
-                To:
-            </a>
-            <input type="text" placeholder="Email">
-        </div>
-    </div>
-    <div class="ui image label email">
-        <img src="justen.jpg">
-        email@address.com
-        <i class="delete icon"></i>
-    </div>
-    <div class="ui divider">
-    </div>
-
-    <div class="width100">
-        <div class="inline-block width100">
-            <div class="ui labeled input width100">
-                <a class="ui label width10 blue">
-                    Title:
-
-                </a>
-                <input type="text" placeholder="Your Title">
-            </div>
-        </div>
-    </div>
-    <div class="width100">
-        <div class="field">
-            <label>Email:</label>
-            <textarea class="width100 height300"></textarea>
-        </div>
-    </div>
-    <div class="ui divider"></div>
-    <div class="ui blue button float-right">
-        Send
-    </div>
-</div>
-
-
-<div class="ui segment">
-
-
     <form name="newMail" ng-controller="CreateCtrl">
         <div class="inline-block">
             <div style="display: inline-block;">
@@ -106,13 +64,10 @@
             </div>
         </div>
         <div class="ui divider"></div>
-        <button ng-click="add()" class="ui blue button float-right">
+        <button ng-click="send()" class="ui blue button float-right">
             Send
         </button>
     </form>
 
 </div>
 <div class="two wide column hide-sm"></div>
-</div>
-</div>
-</div>
