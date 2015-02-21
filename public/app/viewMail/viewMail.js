@@ -10,6 +10,14 @@ angular.module('MailClient.app.viewMail.viewMailCtrl', [])
                 }).error(function (res) {
                     $scope.mail = 'ERROR: ' + res;
                 });
+				
+			$scope.markRead = function () {
+				$http.put('/emails/' + id, {
+        			read: true
+        		}).success(function (res) {
+        			// nothing happen
+        		});
+			};
 /*
                 $http.get('/sent/' + id).success(function (res) {
                     $scope.mail.concat(res);
@@ -19,5 +27,6 @@ angular.module('MailClient.app.viewMail.viewMailCtrl', [])
 */
             };
             $scope.getMail();
+			$scope.markRead();
 
     }]);
