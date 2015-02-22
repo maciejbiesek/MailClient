@@ -72,18 +72,16 @@ angular.module('MailClient.app.emails.listDirective', [])
                                 message_html += ' href="#/view/' + message.id + '"';
                             }
                             message_html += ' class="mail-title">' + messageToDisplay.title + '</a>' +
-                            '<a> - </a>' +
-<<<<<<< HEAD
-                            '<a class="mail_content">' + result.content + '</a>' +
-                            '<a href="#/delete/' + message.id + '" > <i class="trash icon float-right"></i></a></div></a>';
-=======
-                            '<a class="mail_content">' + messageToDisplay.content + '</a>';
+                            '<a> - </a>' ;
                             if (message.sender !== undefined) {
-                                message_html += '<i class="trash icon float-right"></i></div></a>';
+
+                                message_html += '<a class="mail_content">'+ messageToDisplay.content + '</a>' +
+                                '<a href="#/delete/' + message.id + '" > <i class="trash icon float-right"></i></a></div></a>';
                             }
+
                             message_html+='</a>';
 
->>>>>>> origin/list
+
                             li.innerHTML = message_html;
 
                             list.appendChild(li);
@@ -92,30 +90,6 @@ angular.module('MailClient.app.emails.listDirective', [])
                         });
                     }
                 });
-
-                //scope.getContentLength = function (content, title) {
-                //    (content.length + title.length < 150) ? result = content : result = content.substring(0, 150 - title.length);
-                //    return result;
-                //};
-                //
-                //scope.getTitleLength = function (title) {
-                //    (title.length > 26) ? result = title.substring(0, 26) + "..." : result = title;
-                //    return result;
-                //};
-                //
-                //scope.getCorespondentLength = function (corespondent) {
-                //    (corespondent.length > 26) ? result = corespondent.substring(0, 26) + "..." : result = corespondent;
-                //    return result;
-                //};
-                //
-                //scope.adjustMail = function (corespondent, title, content) {
-                //    var result = {};
-                //    result.corespondent = scope.getCorespondentLength(corespondent);
-                //    result.title = scope.getTitleLength(title);
-                //    result.content = scope.getContentLength(content, result.title);
-                //
-                //    return result;
-                //}
 
 
             }
