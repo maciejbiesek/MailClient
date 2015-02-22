@@ -1,5 +1,6 @@
-angular.module("MailClient", [
+var app = angular.module("MailClient", [
     'ui.router',
+    'LocalStorageModule',
 
     'MailClient.route',
 

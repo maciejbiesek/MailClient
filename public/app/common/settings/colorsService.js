@@ -1,6 +1,7 @@
 angular.module('MailClient.app.common.settings.colorsService', [])
 
-	.service('colorsService', function(){
+	.service('colorsService', ['localStorageService',
+		function(localStorageService){
 
 		var colors = {
             'blue': true,
@@ -27,11 +28,16 @@ angular.module('MailClient.app.common.settings.colorsService', [])
         		}
         	],
         	changeColor = function (color) {
+        		localStorageService.set('color', color);
 	            for(var col in colors) { 
 	                colors[col] = false; 
 	            }
 	            colors[color] = true;
 	        };
+
+	    if (localStorageService.get('color') !== null) {
+		    changeColor(localStorageService.get('color'));    
+		}
 
 	    return {
 	    	changeColor: changeColor,
@@ -41,5 +47,5 @@ angular.module('MailClient.app.common.settings.colorsService', [])
 	    	}
 	    };
 
-	});
+	}]);
 

@@ -1,6 +1,7 @@
 angular.module('MailClient.app.common.settings.reloadingTimeService', [])
 
-	.service('reloadingTimeService', function(){
+	.service('reloadingTimeService', ['localStorageService',
+        function(localStorageService){
 
         var reloadingTime = 60000,
             values = {
@@ -23,12 +24,17 @@ angular.module('MailClient.app.common.settings.reloadingTimeService', [])
                 }
             ],
             setTime = function (time) {
+                localStorageService.set('reloadingTime', time);
                 reloadingTime = time.substr(0, time.length - 1) * 1000;
                 for(var t in values) { 
                     values[t] = false; 
                 }
                 values[time] = true;
             };
+
+        if (localStorageService.get('reloadingTime') !== null) {
+            setTime(localStorageService.get('reloadingTime'));
+        }
 
 	    return {
             labels: labels,
@@ -41,5 +47,5 @@ angular.module('MailClient.app.common.settings.reloadingTimeService', [])
             }
 	    };
 
-	});
+	}]);
 
