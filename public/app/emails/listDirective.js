@@ -44,58 +44,74 @@ angular.module('MailClient.app.emails.listDirective', [])
                             } else if (message.receivers !== undefined) {
                                 corespondent = message.receivers[0];
                             }
-                            var message_html = '<a href="www.google.com"><div class="email-preview">';
+
+
+                            console.log(message);
+                            //console.log(messageToDisplay.title);
+                            //console.log(corespondent);
+                            //console.log(messageToDisplay.content);
+
+
+                            var message_html = '<a';
+                            if (message.sender !== undefined) {
+                                message_html += ' href="#/view/' + message.id + '"';
+                            }
+                            message_html+='><div class="email-preview">';
+
+
                             if (message.read === false) {
                                 message_html += '<i class="mail-ico folder icon"></i>';
                             } else {
                                 message_html += '<i class="mail-ico folder open outline icon"></i>';
                             }
 
-							console.log(message);
-                            //console.log(messageToDisplay.title);
-                            //console.log(corespondent);
-                            //console.log(messageToDisplay.content);
 
+                            message_html += '<a class="mail-sender">' + corespondent + '</a>' +
+                            '<a class="mail-vertical-separator"></a> <a ';
+                            if (message.sender !== undefined) {
+                                message_html += ' href="#/view/' + message.id + '"';
+                            }
+                            message_html += ' class="mail-title">' + messageToDisplay.title + '</a>' +
+                            '<a> - </a>'
+                            ;
+                            if (message.sender !== undefined) {
+                                message_html += '<a class="mail_content">'+ messageToDisplay.content + '</a>' +
+                                '<a href="#/delete/' + message.id + '" > <i class="trash icon float-right"></i></a></div></a>';
+                             }
+                            message_html+='</a>';
 
-                            result = scope.adjustMail(corespondent, messageToDisplay.title, messageToDisplay.content);
-
-                            message_html += '<a class="mail-sender">' + result.corespondent + '</a>' +
-                            '<a class="mail-vertical-separator"></a>' +
-                            '<a href="#/view/' + message.id + '" class="mail-title">' + result.title + '</a>' +
-                            '<a> - </a>' +
-                            '<a class="mail_content">' + result.content + '</a>' +
-                            '<a href="#/delete/' + message.id + '" > <i class="trash icon float-right"></i></a></div></a>';
                             li.innerHTML = message_html;
 
                             list.appendChild(li);
+
 
                         });
                     }
                 });
 
-                scope.getContentLength = function (content, title) {
-                    (content.length + title.length < 150) ? result = content : result = content.substring(0, 150 - title.length);
-                    return result;
-                };
-
-                scope.getTitleLength = function (title) {
-                    (title.length > 26) ? result = title.substring(0, 26) + "..." : result = title;
-                    return result;
-                };
-
-                scope.getCorespondentLength = function (corespondent) {
-                    (corespondent.length > 26) ? result = corespondent.substring(0, 26) + "..." : result = corespondent;
-                    return result;
-                };
-
-                scope.adjustMail = function (corespondent, title, content) {
-                    var result = {};
-                    result.corespondent = scope.getCorespondentLength(corespondent);
-                    result.title = scope.getTitleLength(title);
-                    result.content = scope.getContentLength(content, result.title);
-
-                    return result;
-                }
+                //scope.getContentLength = function (content, title) {
+                //    (content.length + title.length < 150) ? result = content : result = content.substring(0, 150 - title.length);
+                //    return result;
+                //};
+                //
+                //scope.getTitleLength = function (title) {
+                //    (title.length > 26) ? result = title.substring(0, 26) + "..." : result = title;
+                //    return result;
+                //};
+                //
+                //scope.getCorespondentLength = function (corespondent) {
+                //    (corespondent.length > 26) ? result = corespondent.substring(0, 26) + "..." : result = corespondent;
+                //    return result;
+                //};
+                //
+                //scope.adjustMail = function (corespondent, title, content) {
+                //    var result = {};
+                //    result.corespondent = scope.getCorespondentLength(corespondent);
+                //    result.title = scope.getTitleLength(title);
+                //    result.content = scope.getContentLength(content, result.title);
+                //
+                //    return result;
+                //}
 
 
             }

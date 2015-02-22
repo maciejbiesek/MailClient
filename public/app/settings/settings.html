@@ -29,6 +29,7 @@
                             <div class="title">Choose</div>
                             <div class="description">a refresh-rate</div>
                         </div>
+
                     </a>
                     <a ng-repeat="chosenTime in reloadingTimeService.labels" class="step" ng-class="{active: reloadingTimeService.values[chosenTime.time]}" ng-click="reloadingTimeService.setTime(chosenTime.time)">
                         <div class="content">
