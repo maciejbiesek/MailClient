@@ -1,4 +1,17 @@
-
+<script>
+    function timeConverter(UNIX_timestamp) {
+        var a = new Date(UNIX_timestamp * 1000);
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        var year = a.getFullYear();
+        var month = months[a.getMonth()];
+        var date = a.getDate();
+        var hour = a.getHours();
+        var min = a.getMinutes();
+        var sec = a.getSeconds();
+        var time = date + ',' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+        return time;
+    }
+</script>
 
 <div class="ui segment">
     <div class="send-inbox-sent-menu">
@@ -18,14 +31,16 @@
 
 <div class="ui segment">
 
-    <!--długość treści maila max cała = 135 więc długośc contentu 135-długosć tytułu-->
-    <!--max długość nadawcy-> 29 znaków-->
-
     <br/>
     <a class="ui blue image label view-list email float-right">
         <i class="time icon"></i> Date
         <span class="detail">2014-05-05 20:22:22</span>
     </a>
+    <a class="ui blue image label view-list email float-right">
+        <i class="trash icon" style="top:0px"></i>
+        <span class="detail">delete</span>
+    </a>
+
 
     <div class="inline-block">
         <div class="ui labeled input">
@@ -38,24 +53,7 @@
     <a class="ui tag label email image view-list"><img src="justen.jpg">{{mail.sender}} </a>
     <br/>
 
-    <div class="inline-block">
-        <div class="ui labeled input">
-            <a class="ui label blue">
-                To:
-            </a>
-        </div>
-    </div>
 
-    <div class="ui image label email view-list">
-        <img src="justen.jpg">
-        email@address.com
-
-    </div>
-    <div class="ui image label email view-list">
-        <img src="justen.jpg">
-        email@address.com
-
-    </div>
     <div class="ui divider">
     </div>
 
@@ -77,4 +75,8 @@
     </div>
 </div>
 <div class="two wide column hide-sm"></div>
+<!--var dateTime = new Date(1370001284000);-->
+<!--dateTime.toISOString(); // Returns "2013-05-31T11:54:44.000Z"-->
+
+<pre> {{console.log(mail.received)}} </pre>
 

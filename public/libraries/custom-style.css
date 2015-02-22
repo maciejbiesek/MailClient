@@ -98,7 +98,7 @@
 }
 
 .mail_content {
-    width: 400px;
+    width: 380px;
     display: inline-block;
     text-overflow:ellipsis;
     overflow: hidden;

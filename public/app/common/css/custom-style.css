@@ -68,7 +68,11 @@ strong{
 }
 
 .mail-title {
-    font-weight: bold;
+    font-weight: bold  !important;
+    width: 220px !important;
+    overflow-x: hidden  !important;
+    text-overflow: ellipsis  !important;
+    display: inline-block  !important;
 }
 
 .segment.mail-item {
