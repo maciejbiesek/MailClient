@@ -25,4 +25,9 @@ angular.module('MailClient.app.emails.inbox.InboxCtrl', [])
 					return counter;
 				}
 			};
+			
+			setInterval(function () {
+				$scope.getEmails();
+			}, 3000);
+			
 		}]);
