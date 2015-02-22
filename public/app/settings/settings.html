@@ -5,42 +5,17 @@
             <div class="ui segment">
                 <br/>
                 <div class="ui steps">
-                    <a class="step">
+                    <div class="step">
                         <div class="content">
                             <div class="title">Choose</div>
                             <div class="description">a colour</div>
                         </div>
-                    </a>
-                    <a class="step">
+                    </div>
+                    <a ng-repeat="chosenColor in colorsService.labels" class="step" ng-class="{active: colorsService.colors[chosenColor.name]}" ng-click="colorsService.changeColor(chosenColor.name)">
                         <div class="content">
-                            <div class="title">#1</div>
+                            <div class="title">#{{chosenColor.id}}</div>
                             <div class="description">
-                                <span>Blue</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="active step">
-                        <div class="content">
-                            <div class="title">#2</div>
-                            <div class="description">
-                                <span>Teal</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="step">
-                        <div class="content">
-                            <div class="title">#3</div>
-                            <div class="description">
-                                <span>Red</span>
-
-                            </div>
-                        </div>
-                    </a>
-                    <a class="step">
-                        <div class="content">
-                            <div class="title">#4</div>
-                            <div class="description">
-                                <span>Black</span>
+                                <span>{{chosenColor.name}}</span>
                             </div>
                         </div>
                     </a>
@@ -82,12 +57,12 @@
                     </a>
 
                 </div>
-                <div class="ui divider"></div>
-                <div class="ui download primary button float-right">
-                    Save
-                </div>
             </div>
         </div>
         <div class="two wide column hide-sm"></div>
     </div>
 </div>
+
+                            <button ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label">
+                                COLORS
+                            </button>

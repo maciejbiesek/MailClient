@@ -19,6 +19,8 @@ angular.module("MailClient", [
 
     'MailClient.app.settings.SettingsCtrl',
     'MailClient.app.settings.route',
+
+    'MailClient.app.common.settings.colorsService',
 	
 	'MailClient.app.emails.listDirective'
 
