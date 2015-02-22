@@ -1,7 +1,7 @@
 angular.module('MailClient.app.viewMail.viewMailCtrl', [])
 
-	.controller('ViewMailCtrl', ['$scope', '$http', '$location',
-        function ($scope, $http, $location) {
+	.controller('ViewMailCtrl', ['$scope', '$http', '$location', '$state',
+        function ($scope, $http, $location, $state) {
 
             var id = $location.url().substring(6);
             $scope.getMail = function () {
@@ -9,6 +9,7 @@ angular.module('MailClient.app.viewMail.viewMailCtrl', [])
                     $scope.mail = res;
                 }).error(function (res) {
                     $scope.mail = 'ERROR: ' + res;
+					$state.go('main.sent');
                 });
 				
 			$scope.markRead = function () {
