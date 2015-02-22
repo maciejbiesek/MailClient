@@ -25,5 +25,14 @@
       "anna@fontanna.com"
     ],
     "sent": 1424210238048
+  },
+  {
+    "id": 1424596543270,
+    "title": "testowy mail Macieja",
+    "content": "Treść testowego maila Macieja",
+    "receivers": [
+      "test@test.pl"
+    ],
+    "sent": 1424596543270
   }
 ]
