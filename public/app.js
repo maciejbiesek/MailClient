@@ -21,6 +21,7 @@ angular.module("MailClient", [
     'MailClient.app.settings.route',
 
     'MailClient.app.common.settings.colorsService',
+    'MailClient.app.common.settings.reloadingTimeService',
 	
 	'MailClient.app.emails.listDirective'
 
