@@ -24,6 +24,9 @@ var app = angular.module("MailClient", [
     'MailClient.app.common.settings.colorsService',
     'MailClient.app.common.settings.reloadingTimeService',
 	
-	'MailClient.app.emails.listDirective'
+	'MailClient.app.emails.listDirective',
+	
+	'MailClient.app.deleteMail.delete.route',
+	'MailClient.app.deleteMail.deleteMailCtrl'
 
 ]);
