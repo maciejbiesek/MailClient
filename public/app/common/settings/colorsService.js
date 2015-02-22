@@ -1,7 +1,7 @@
 angular.module('MailClient.app.common.settings.colorsService', [])
 
 	.service('colorsService', ['localStorageService',
-		function(localStorageService){
+		function(localStorageService) {
 
 		var colors = {
             'blue': true,

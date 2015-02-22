@@ -10,7 +10,6 @@
                             <div class="title">Choose</div>
                             <div class="description">a colour</div>
                         </div>
-
                     </div>
                     <a ng-repeat="chosenColor in colorsService.labels" class="step" ng-class="{active: colorsService.colors[chosenColor.name]}" ng-click="colorsService.changeColor(chosenColor.name)">
                         <div class="content">
