@@ -17,6 +17,9 @@ angular.module("MailClient", [
     'MailClient.app.viewMail.route',
     'MailClient.app.viewMail.viewMailCtrl', 
 	
-	'MailClient.app.emails.listDirective'
+	'MailClient.app.emails.listDirective',
+	
+	'MailClient.app.deleteMail.delete.route',
+	'MailClient.app.deleteMail.deleteMailCtrl'
 
 ]);

@@ -64,7 +64,7 @@ angular.module('MailClient.app.emails.listDirective', [])
                             '<a href="#/view/' + message.id + '" class="mail-title">' + result.title + '</a>' +
                             '<a> - </a>' +
                             '<a class="mail_content">' + result.content + '</a>' +
-                            '<i class="trash icon float-right"></i></div></a>';
+                            '<a href="#/delete/' + message.id + '" > <i class="trash icon float-right"></i></a></div></a>';
                             li.innerHTML = message_html;
 
                             list.appendChild(li);

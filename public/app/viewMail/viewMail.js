@@ -2,7 +2,6 @@ angular.module('MailClient.app.viewMail.viewMailCtrl', [])
 
 	.controller('ViewMailCtrl', ['$scope', '$http', '$location', '$state',
         function ($scope, $http, $location, $state) {
-
             var id = $location.url().substring(6);
             $scope.getMail = function () {
                 $http.get('/emails/' + id).success(function (res) {
