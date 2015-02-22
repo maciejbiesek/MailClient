@@ -1,17 +1,18 @@
 <div class="ui segment">
     <div class="send-inbox-sent-menu">
-        <a class="ui blue image label" href="/#/create">
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/create">
             <i class="send icon"></i>
+        </a>
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/inbox">
+            Inbox
             <span class="detail">(active)</span>
         </a>
-        <a class="ui blue image label" href="/#/inbox">
-            Inbox
-
-        </a>
-        <a class="ui blue image label" href="/#/sent">
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/sent">
             Sent
         </a>
-
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/settings">
+            Settings
+        </a>
     </div>
 </div>
 
@@ -20,7 +21,7 @@
         <div class="inline-block">
             <div style="display: inline-block;">
                 <div class="ui labeled input">
-                    <div class="ui label blue">
+                    <div ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui label">
                         To:
                     </div>
                     <input placeholder="E-mail address" type="email"
@@ -29,7 +30,7 @@
 
                 </div>
             </div>
-            <a style="display: inline-block; position:relative;top:-14px;" class="ui blue button"
+            <a style="display: inline-block; position:relative;top:-14px;" ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui button"
                ng-click="addReceiver(receiver)">
                 Add new
             </a>
@@ -47,7 +48,7 @@
         <div class="width100">
             <div class="inline-block width100">
                 <div class="ui labeled input width100">
-                    <div class="ui label width10 blue">
+                    <div ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui label width10">
                         Title:
                     </div>
                     <input type="text" placeholder="Your Title" ng-class="{error: newMail.title.$error.required}"
@@ -64,7 +65,7 @@
             </div>
         </div>
         <div class="ui divider"></div>
-        <button ng-click="send()" class="ui blue button float-right">
+        <button ng-click="send()" ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui button float-right">
             Send
         </button>
     </form>

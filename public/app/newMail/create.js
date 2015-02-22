@@ -1,7 +1,11 @@
 angular.module('MailClient.app.newMail.CreateCtrl', [])
 
-    .controller('CreateCtrl', function ($scope, $http, $state) {
-    	$scope.receiver = '';
+    .controller('CreateCtrl', ['$scope', '$http', '$state', 'colorsService',
+     function ($scope, $http, $state, colorsService) {
+    	
+        $scope.colorsService = colorsService;
+
+        $scope.receiver = '';
     	$scope.title = '';
         $scope.content = '';
         $scope.receivers = [];
@@ -29,4 +33,4 @@ angular.module('MailClient.app.newMail.CreateCtrl', [])
         		});
         	}
         };
-    });
+    }]);

@@ -1,46 +1,58 @@
-<div class="ui grid">
-    <div class="ui grid">
-        <div class="two wide column hide-sm"></div>
-        <div class="twelve wide column sm-expand">
-            <div class="ui segment">
-                <br/>
-                <div class="ui steps">
-                    <div class="step">
-                        <div class="content">
-                            <div class="title">Choose</div>
-                            <div class="description">a colour</div>
-                        </div>
-                    </div>
-                    <a ng-repeat="chosenColor in colorsService.labels" class="step" ng-class="{active: colorsService.colors[chosenColor.name]}" ng-click="colorsService.changeColor(chosenColor.name)">
-                        <div class="content">
-                            <div class="title">#{{chosenColor.id}}</div>
-                            <div class="description">
-                                <span>{{chosenColor.name}}</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+<div class="ui segment">
 
-                <div class="ui divider hidden"></div>
+    <div class="send-inbox-sent-menu">
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/create">
+            <i class="send icon"></i>
+        </a>
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/inbox">
+            Inbox
+            <span class="detail">(active)</span>
+        </a>
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/sent">
+            Sent
+        </a>
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/settings">
+            Settings
+        </a>
+    </div>
+</div>
 
-                <div class="ui steps">
-                    <a class="step">
-                        <div class="content">
-                            <div class="title">Choose</div>
-                            <div class="description">a refresh-rate</div>
-                        </div>
-                    </a>
-                    <a ng-repeat="chosenTime in reloadingTimeService.labels" class="step" ng-class="{active: reloadingTimeService.values[chosenTime.time]}" ng-click="reloadingTimeService.setTime(chosenTime.time)">
-                        <div class="content">
-                            <div class="title">#{{chosenTime.id}}</div>
-                            <div class="description">
-                                <span>{{chosenTime.time}}</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+<div class="ui segment">
+    <br/>
+    <div class="ui steps">
+        <div class="step">
+            <div class="content">
+                <div class="title">Choose</div>
+                <div class="description">a colour</div>
             </div>
         </div>
-        <div class="two wide column hide-sm"></div>
+        <a ng-repeat="chosenColor in colorsService.labels" class="step" ng-class="{active: colorsService.colors[chosenColor.name]}" ng-click="colorsService.changeColor(chosenColor.name)">
+            <div class="content">
+                <div class="title">#{{chosenColor.id}}</div>
+                <div class="description">
+                    <span>{{chosenColor.name}}</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="ui divider hidden"></div>
+
+    <div class="ui steps">
+        <a class="step">
+            <div class="content">
+                <div class="title">Choose</div>
+                <div class="description">a refresh-rate</div>
+            </div>
+        </a>
+        <a ng-repeat="chosenTime in reloadingTimeService.labels" class="step" ng-class="{active: reloadingTimeService.values[chosenTime.time]}" ng-click="reloadingTimeService.setTime(chosenTime.time)">
+            <div class="content">
+                <div class="title">#{{chosenTime.id}}</div>
+                <div class="description">
+                    <span>{{chosenTime.time}}</span>
+                </div>
+            </div>
+        </a>
+
     </div>
 </div>
