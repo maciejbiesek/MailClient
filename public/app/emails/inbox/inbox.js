@@ -1,7 +1,9 @@
 angular.module('MailClient.app.emails.inbox.InboxCtrl', [])
 
-	.controller('InboxCtrl', ['$scope', '$http',
-		function ($scope, $http) {
+	.controller('InboxCtrl', ['$scope', '$http', 'colorsService', 'reloadingTimeService',
+		function ($scope, $http, colorsService, reloadingTimeService) {
+
+			$scope.colorsService = colorsService;
 
 			$scope.getEmails = function () {
 				$http.get('/emails').success(function (res) {
@@ -28,6 +30,6 @@ angular.module('MailClient.app.emails.inbox.InboxCtrl', [])
 			
 			setInterval(function () {
 				$scope.getEmails();
-			}, 3000);
+			}, reloadingTimeService.reloadingTime);
 			
 		}]);

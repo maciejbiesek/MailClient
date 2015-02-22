@@ -1,7 +1,9 @@
 angular.module('MailClient.app.viewMail.viewMailCtrl', [])
 
-    .controller('ViewMailCtrl', ['$scope', '$http', '$location',
-        function ($scope, $http, $location) {
+    .controller('ViewMailCtrl', ['$scope', '$http', '$location', 'colorsService',
+        function ($scope, $http, $location, colorsService) {
+
+            $scope.colorsService = colorsService;
 
             var id = $location.url().substring(6);
             $scope.getMail = function () {
@@ -18,13 +20,6 @@ angular.module('MailClient.app.viewMail.viewMailCtrl', [])
                         // nothing happen
                     });
                 };
-                /*
-                 $http.get('/sent/' + id).success(function (res) {
-                 $scope.mail.concat(res);
-                 }).error(function (res) {
-                 $scope.mail = 'ERROR: ' + res;
-                 });
-                 */
             };
             $scope.getMail();
             $scope.markRead();

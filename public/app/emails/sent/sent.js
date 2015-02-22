@@ -1,7 +1,9 @@
 angular.module('MailClient.app.emails.sent.SentCtrl', [])
 
-    .controller('SentCtrl', ['$scope', '$http',
-        function ($scope, $http) {
+    .controller('SentCtrl', ['$scope', '$http', 'colorsService',
+        function ($scope, $http, colorsService) {
+
+            $scope.colorsService = colorsService;
 
             $scope.getSent = function () {
                 $http.get('/sent').success(function (res) {

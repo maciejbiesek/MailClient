@@ -1,16 +1,19 @@
 <div class="ui segment">
     <div class="send-inbox-sent-menu">
-        <a class="ui blue image label" href="/#/create">
+
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/create">
             <i class="send icon"></i>
         </a>
-        <a class="ui blue image label" href="/#/inbox">
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/inbox">
             Inbox
-
+            <span class="detail">(active)</span>
         </a>
-        <a class="ui blue image label" href="/#/sent">
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/sent">
             Sent
         </a>
-
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/settings">
+            Settings
+        </a>
     </div>
 </div>
 
@@ -29,7 +32,7 @@
 
     <div class="inline-block">
         <div class="ui labeled input">
-            <a class="ui blue label">
+            <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui label">
                 From:
             </a>
         </div>
@@ -45,7 +48,7 @@
     <div class="width100">
         <div class="inline-block width100">
             <div class="ui labeled input width100">
-                <a class="ui label  blue width10">
+                <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui label width10">
                     Title:
                 </a>
                 <input readonly type="text" placeholder="{{mail.title}}">

@@ -14,8 +14,7 @@ angular.module('MailClient.app.emails.listDirective', [])
                 scope.$watchGroup(['emails', 'searchTerm'], function (newValue) {
                     list.innerHTML = "";
                     list.classList.add("ui", "segment");
-                    //console.log(newValue);
-                    //console.log(isEmpty(newValue));
+                            
                     var searchTerm = newValue[1];
                     var searchBy = ["title", "content"];
                     var display;
@@ -45,13 +44,6 @@ angular.module('MailClient.app.emails.listDirective', [])
                                 corespondent = message.receivers[0];
                             }
 
-
-                            console.log(message);
-                            //console.log(messageToDisplay.title);
-                            //console.log(corespondent);
-                            //console.log(messageToDisplay.content);
-
-
                             var message_html = '<a';
                             if (message.sender !== undefined) {
                                 message_html += ' href="#/view/' + message.id + '"';
@@ -80,7 +72,6 @@ angular.module('MailClient.app.emails.listDirective', [])
                             }
 
                             message_html+='</a>';
-
 
                             li.innerHTML = message_html;
 

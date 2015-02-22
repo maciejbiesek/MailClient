@@ -1,5 +1,6 @@
-angular.module("MailClient", [
+var app = angular.module("MailClient", [
     'ui.router',
+    'LocalStorageModule',
 
     'MailClient.route',
 
@@ -16,6 +17,12 @@ angular.module("MailClient", [
 
     'MailClient.app.viewMail.route',
     'MailClient.app.viewMail.viewMailCtrl', 
+
+    'MailClient.app.settings.SettingsCtrl',
+    'MailClient.app.settings.route',
+
+    'MailClient.app.common.settings.colorsService',
+    'MailClient.app.common.settings.reloadingTimeService',
 	
 	'MailClient.app.emails.listDirective',
 	

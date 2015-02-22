@@ -1,24 +1,26 @@
 <div class="ui segment">
 
     <div class="send-inbox-sent-menu">
-        <a class="ui blue image label" href="/#/create">
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/create">
             <i class="send icon"></i>
         </a>
-        <a class="ui blue image label" href="/#/inbox">
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/inbox">
             Inbox
-        </a>
-        <a class="ui blue image label" href="/#/sent">
-            Sent
             <span class="detail">(active)</span>
         </a>
-
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/sent">
+            Sent
+        </a>
+        <a ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui image label" href="/#/settings">
+            Settings
+        </a>
     </div>
+    
     <div class="search-box">
         <div class="ui action small left icon input">
             <i class="search icon"></i>
             <input type="text" placeholder="Search..." ng-change="onSearch()" ng-model="searchTerm"/>
-
-            <div class="ui blue button">Search</div>
+            <div ng-class="{blue: colorsService.colors.blue, red: colorsService.colors.red, teal: colorsService.colors.teal, black: colorsService.colors.black}" class="ui button">Search</div>
         </div>
     </div>
 
