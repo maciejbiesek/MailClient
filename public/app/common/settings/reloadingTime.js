@@ -1,7 +1,7 @@
 angular.module('MailClient.app.common.settings.reloadingTimeService', [])
 
 	.service('reloadingTimeService', ['localStorageService',
-        function(localStorageService){
+        function (localStorageService) {
 
         var reloadingTime = 60000,
             values = {
