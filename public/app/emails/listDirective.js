@@ -64,11 +64,10 @@ angular.module('MailClient.app.emails.listDirective', [])
                                 message_html += ' href="#/view/' + message.id + '"';
                             }
                             message_html += ' class="mail-title">' + messageToDisplay.title + '</a>' +
-                            '<a> - </a>' ;
+                            '<a> - </a>' + '<a class="mail_content">'+ messageToDisplay.content + '</a>';
+							
                             if (message.sender !== undefined) {
-
-                                message_html += '<a class="mail_content">'+ messageToDisplay.content + '</a>' +
-                                '<a href="#/delete/' + message.id + '" > <i class="trash icon float-right"></i></a></div></a>';
+                                message_html += '<a href="#/delete/' + message.id + '" > <i class="trash icon float-right"></i></a></div></a>';
                             }
 
                             message_html+='</a>';
