@@ -1,9 +1,10 @@
 angular.module('MailClient.app.viewMail.viewMailCtrl', [])
 
-    .controller('ViewMailCtrl', ['$scope', '$http', '$location', 'colorsService',
-        function ($scope, $http, $location, colorsService) {
+    .controller('ViewMailCtrl', ['$scope', '$http', '$location', 'colorsService', 'deleteService',
+        function ($scope, $http, $location, colorsService, deleteService) {
 
             $scope.colorsService = colorsService;
+			$scope.deleteService = deleteService;
 
             var id = $location.url().substring(6);
             $scope.getMail = function () {

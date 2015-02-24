@@ -1,9 +1,10 @@
 angular.module('MailClient.app.emails.inbox.InboxCtrl', [])
 
-	.controller('InboxCtrl', ['$scope', '$http', 'colorsService', 'reloadingTimeService',
-		function ($scope, $http, colorsService, reloadingTimeService) {
+	.controller('InboxCtrl', ['$scope', '$http', 'colorsService', 'reloadingTimeService', 'deleteService',
+		function ($scope, $http, colorsService, reloadingTimeService, deleteService) {
 
 			$scope.colorsService = colorsService;
+			$scope.deleteService = deleteService;
 
 			$scope.getEmails = function () {
 				$http.get('/emails').success(function (res) {

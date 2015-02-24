@@ -26,7 +26,6 @@ var app = angular.module("MailClient", [
 	
 	'MailClient.app.emails.listDirective',
 	
-	'MailClient.app.deleteMail.delete.route',
-	'MailClient.app.deleteMail.deleteMailCtrl'
+	'MailClient.app.emails.deleteService'
 
 ]);

@@ -68,7 +68,7 @@ angular.module('MailClient.app.emails.listDirective', [])
                             if (message.sender !== undefined) {
 
                                 message_html += '<a class="mail_content">'+ messageToDisplay.content + '</a>' +
-                                '<a href="#/delete/' + message.id + '" > <i class="trash icon float-right"></i></a></div></a>';
+                                '<a ng-click="deleteService.del(message.id)"><i class="trash icon float-right"></i></a></div></a>';
                             }
 
                             message_html+='</a>';
