@@ -11,7 +11,8 @@ angular.module('MailClient.app.emails.listDirective', [])
 		template: '<div id = "list"></div>',
 		link: function (scope, element, attrs) {
 			var list = document.getElementById('list');
-			scope.mailsOnList = {};
+			scope.mailsOnList = [];
+			var mailsInModel = {};
 			function getMessageByID(id){
 				for (var i in scope.emails){
 					if (scope.emails[i].id==id){
@@ -24,7 +25,6 @@ angular.module('MailClient.app.emails.listDirective', [])
 			}
 			function createMessageHtml(message){
 				var li = document.createElement("div");
-				mailsNodes.push(li);
 				li.classList.add("ui", "secondary", "segment", "mail-item");
 				var corespondent;
 				if (message.sender !== undefined) {
@@ -58,38 +58,60 @@ angular.module('MailClient.app.emails.listDirective', [])
 
 				message_html+='</a>';
 				li.innerHTML = message_html;
-				li.setAtributte("messageID", message.id);
+				li.setAttribute("messageID", message.id);
 				return li;
 			}
 			scope.$watch('emails', function (newEmailsValue){
+				newEmailsValue = newEmailsValue || [];
 				newEmailsValue.forEach(function(message){
 					var hash = hashingFunction(message);
-					if(!scope.emailsOnList[hash]){
+					if(!scope.mailsOnList[hash]){
 						var MessageNode = createMessageHtml(message);
 						list.insertBefore(MessageNode, list.childNodes[0]);
-						scope.emailsOnList[hash] = MessageNode;
+						scope.mailsOnList[hash] = MessageNode;
+					}
+				});
+				Object.keys(scope.mailsOnList).forEach(function(messageID){
+					var existsInModel = false;
+					newEmailsValue.forEach(function(message){
+						if(messageID == message.id){
+							existsInModel = true;
+						}
+					});
+					if(!existsInModel){
+						list.removeChild(scope.mailsOnList[messageID]);
+						//delete scope.mailsOnList[messageID];
 					}
 				});
 			});
 
 			scope.$watch('searchTerm', function(newSearchValue){
+				console.log(newSearchValue);
 				var searchTerm = newSearchValue;
-				var serachBy = ["title", "content"];
 				var display;
 				var reg = new RegExp("(" + searchTerm + ")", "gim");
-				scope.mailsOnList.forEach(function(Node){
-					var messageID = Node.getAttributes("messageID");
+				console.log(scope.mailsOnList)
+				for(var i in scope.mailsOnList){
+					var Node = scope.mailsOnList[i];
+				//scope.mailsOnList.forEach(function(Node){
+					console.log("lolo")
+					var messageID = Node.getAttribute("messageID");
 					var message = getMessageByID(messageID);
+					var searchBy = ["title", "content"];
 					for (var j in searchBy){
+						console.log("nono")
 						var matches = reg.test(message[searchBy[j]]);
+						console.log("non", matches);
 						if(matches){
+							console.log(Node);
 							var element = Node.querySelectorAll("."+searchBy[j])[0];
 							element.textContent = element.textContent.replace(reg, '<strong>$1</strong>');
 						}else{
 							Node.classList.add("hidden");
 						}
 					}
-				});
+				//});
+				}
 			});			
 		}
 	};
