@@ -26,6 +26,13 @@ app.use(bodyParser.json());
 
 app.get('/emails', function (req, res) {
 	setTimeout(function () {
+		emails = emails.sort(function(email1, email2){
+			if(email1.received > email2.received){
+				return 1
+			}else{
+				return -1
+			}
+		});
 		res.json(emails);
 	}, 1000);
 });
