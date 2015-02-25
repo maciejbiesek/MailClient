@@ -86,26 +86,21 @@ angular.module('MailClient.app.emails.listDirective', [])
 			});
 
 			scope.$watch('searchTerm', function(newSearchValue){
-				console.log(newSearchValue);
 				var searchTerm = newSearchValue;
 				var display;
 				var reg = new RegExp("(" + searchTerm + ")", "gim");
-				console.log(scope.mailsOnList)
 				for(var i in scope.mailsOnList){
 					var Node = scope.mailsOnList[i];
 				//scope.mailsOnList.forEach(function(Node){
-					console.log("lolo")
 					var messageID = Node.getAttribute("messageID");
 					var message = getMessageByID(messageID);
 					var searchBy = ["title", "content"];
 					for (var j in searchBy){
-						console.log("nono")
 						var matches = reg.test(message[searchBy[j]]);
-						console.log("non", matches);
 						if(matches){
-							console.log(Node);
 							var element = Node.querySelectorAll("."+searchBy[j])[0];
-							element.textContent = element.textContent.replace(reg, '<strong>$1</strong>');
+							element.innerHTML = element.textContent.replace(reg, '<strong>$1</strong>');
+							Node.classList.remove("hidden");
 						}else{
 							Node.classList.add("hidden");
 						}
